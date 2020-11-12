@@ -73,8 +73,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 if button == .ZR {
                     print("Deactivate spotlight window")
                     DispatchQueue.main.async {
-                        NSApp.deactivate()
                         self.spotlightWindow.hide()
+                        NSApp.hide(nil)
                     }
                 }
             }
@@ -102,6 +102,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let newPos = CGPoint(x: newX, y: newY)
         let source = CGEventSource(stateID: .hidSystemState)
         CGDisplayMoveCursorToPoint(CGMainDisplayID(), newPos)
+
     }
 
 }
