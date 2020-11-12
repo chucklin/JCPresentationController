@@ -12,6 +12,7 @@ import JoyConSwift
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let joyConManager = JoyConManager()
+    let spotlightWindow = SpotlightOverlay()
     var statusItem: NSStatusItem?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -33,10 +34,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             controller.enableIMU(enable: true)
             controller.setInputMode(mode: .standardFull)
             controller.buttonPressHandler = { button in
-                if button == .A {
-                    print("press A")
+                if button == .ZR {
+                    print("press ZR button")
+                    DispatchQueue.main.async {
+                        NSApp.activate(ignoringOtherApps: true)
+                        self.spotlightWindow.show()
+                    }
                 } else if button == .B {
                     print("press B")
+                }
+            }
+            controller.buttonReleaseHandler = { button in
+                if button == .ZR {
+                    DispatchQueue.main.async {
+                        NSApp.deactivate()
+                        self.spotlightWindow.hide()
+                    }
                 }
             }
         }
@@ -54,4 +67,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
 }
-

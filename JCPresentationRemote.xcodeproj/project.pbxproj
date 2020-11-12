@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		A2B34408255CD90E00862965 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B34407255CD90E00862965 /* ViewController.swift */; };
 		A2B3440A255CD90F00862965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B34409255CD90F00862965 /* Assets.xcassets */; };
 		A2B3440D255CD90F00862965 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B3440B255CD90F00862965 /* Main.storyboard */; };
+		A2B34416255CF91700862965 /* SpotlightOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B34415255CF91700862965 /* SpotlightOverlay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A2B3440C255CD90F00862965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2B3440E255CD90F00862965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2B3440F255CD90F00862965 /* JCPresentationRemote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JCPresentationRemote.entitlements; sourceTree = "<group>"; };
+		A2B34415255CF91700862965 /* SpotlightOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightOverlay.swift; sourceTree = "<group>"; };
 		EA9B63B5BDC09B9B064DD182 /* Pods-JCPresentationRemote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCPresentationRemote.debug.xcconfig"; path = "Target Support Files/Pods-JCPresentationRemote/Pods-JCPresentationRemote.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +72,7 @@
 			children = (
 				A2B34405255CD90E00862965 /* AppDelegate.swift */,
 				A2B34407255CD90E00862965 /* ViewController.swift */,
+				A2B34415255CF91700862965 /* SpotlightOverlay.swift */,
 				A2B34409255CD90F00862965 /* Assets.xcassets */,
 				A2B3440B255CD90F00862965 /* Main.storyboard */,
 				A2B3440E255CD90F00862965 /* Info.plist */,
@@ -84,7 +87,6 @@
 				EA9B63B5BDC09B9B064DD182 /* Pods-JCPresentationRemote.debug.xcconfig */,
 				2ECC10A936BCCA67B109D6DC /* Pods-JCPresentationRemote.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -203,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2B34408255CD90E00862965 /* ViewController.swift in Sources */,
+				A2B34416255CF91700862965 /* SpotlightOverlay.swift in Sources */,
 				A2B34406255CD90E00862965 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
