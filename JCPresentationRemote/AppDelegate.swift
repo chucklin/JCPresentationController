@@ -11,12 +11,13 @@ import JoyConSwift
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    let joyConManager = JoyConManager()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
 
         // Set connection event callbacks
-        manager.connectHandler = { controller in
+        joyConManager.connectHandler = { controller in
             // Do something with the controller
             controller.setPlayerLights(l1: .off, l2: .on, l3: .off, l4: .off)
             controller.enableIMU(enable: true)
@@ -27,12 +28,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
         }
-        manager.disconnectHandler = { controller in
+        joyConManager.disconnectHandler = { controller in
             // Clean the controller data
         }
 
         // Start waiting for the connection events
-        manager.runAsync()
+        joyConManager.runAsync()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
