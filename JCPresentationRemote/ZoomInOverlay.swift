@@ -91,11 +91,12 @@ class ZoomInOverlay: NSWindow {
             size: CGSize(width: half, height: half)
         )
 
-        let readyToScale = capturedScreen!.cropping(to: captureRect)!
-        let img = NSImage(cgImage: readyToScale, size: scaledImageView.bounds.size)
-        img.size = NSSize(width: circleSize, height: circleSize)
+        if let readyToScale = capturedScreen?.cropping(to: captureRect) {
+            let img = NSImage(cgImage: readyToScale, size: scaledImageView.bounds.size)
+            img.size = NSSize(width: circleSize, height: circleSize)
 
-        scaledImageView.image = img
+            scaledImageView.image = img
+        }
     }
 }
 
