@@ -46,11 +46,13 @@ class SpotlightOverlay: NSWindow {
         mask.fillRule = .evenOdd
         contentView?.layer?.mask = mask
         setFrame(NSScreen.main!.frame, display: false)
+        NSCursor.hide()
         makeKeyAndOrderFront(self)
         update(mouseLocation: mouseLocationOutsideOfEventStream)
     }
 
     public func hide() {
+        NSCursor.unhide()
         orderOut(self)
     }
 
