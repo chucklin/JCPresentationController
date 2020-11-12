@@ -41,7 +41,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             controller.enableIMU(enable: true)
             controller.setInputMode(mode: .standardFull)
             controller.rightStickPosHandler = { pos in
-                self.stickMouseHandler(pos: pos, speed: CGFloat(20.0))
+                DispatchQueue.main.async {
+                    self.stickMouseHandler(pos: pos, speed: CGFloat(20.0))
+                }
             }
             controller.buttonPressHandler = { button in
                 if button == .ZR {
@@ -126,7 +128,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             x: newX,
             y: mousePos.y + pos.y * speed
         )
-        self.spotlightWindow.update(mouseLocation: newPosUpdate)
+
+        if self.spotlightWindow.isShowed {
+            self.spotlightWindow.update(mouseLocation: newPosUpdate)
+        }
+
     }
 
 }
