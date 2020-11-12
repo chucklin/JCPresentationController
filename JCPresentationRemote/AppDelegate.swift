@@ -8,6 +8,7 @@
 
 import Cocoa
 import JoyConSwift
+import InputMethodKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -54,13 +55,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     DispatchQueue.main.async {
                         let keyboardDown = CGEvent(
                             keyboardEventSource: nil,
-                            virtualKey: 0x7C,
+                            virtualKey: UInt16(kVK_RightArrow),
                             keyDown: true
                         )
                         keyboardDown?.post(tap: .cghidEventTap)
                         let keyboardUp = CGEvent(
                             keyboardEventSource: nil,
-                            virtualKey: 0x7C,
+                            virtualKey: UInt16(kVK_RightArrow),
                             keyDown: false
                         )
                         keyboardUp?.post(tap: .cghidEventTap)
@@ -70,13 +71,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     DispatchQueue.main.async {
                         let keyboardDown = CGEvent(
                             keyboardEventSource: nil,
-                            virtualKey: 0x7B,
+                            virtualKey: UInt16(kVK_LeftArrow),
                             keyDown: true
                         )
                         keyboardDown?.post(tap: .cghidEventTap)
                         let keyboardUp = CGEvent(
                             keyboardEventSource: nil,
-                            virtualKey: 0x7B,
+                            virtualKey: UInt16(kVK_LeftArrow),
                             keyDown: false
                         )
                         keyboardUp?.post(tap: .cghidEventTap)
