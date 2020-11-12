@@ -33,22 +33,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             controller.setPlayerLights(l1: .off, l2: .on, l3: .off, l4: .off)
             controller.enableIMU(enable: true)
             controller.setInputMode(mode: .standardFull)
-            controller.rightStickHandler = { dir, olddir in
-                print(dir)
-                print(olddir)
-            }
             controller.rightStickPosHandler = { pos in
-                self.stickMouseHandler(pos: pos, speed: CGFloat(10.0))
+                self.stickMouseHandler(pos: pos, speed: CGFloat(20.0))
             }
             controller.buttonPressHandler = { button in
                 if button == .ZR {
-                    print("Activate spotlight window")
+//                    print("Activate spotlight window")
                     DispatchQueue.main.async {
                         NSApp.activate(ignoringOtherApps: true)
                         self.spotlightWindow.show()
                     }
                 } else if button == .A {
-                    print("Simulate keyboard right click")
+//                    print("Simulate keyboard right click")
                     DispatchQueue.main.async {
                         let keyboardDown = CGEvent(
                             keyboardEventSource: nil,
@@ -58,7 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         keyboardDown?.post(tap: .cghidEventTap)
                     }
                 } else if button == .Y {
-                    print("Simulate keyboard left click")
+//                    print("Simulate keyboard left click")
                     DispatchQueue.main.async {
                         let keyboardDown = CGEvent(
                             keyboardEventSource: nil,
@@ -71,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             controller.buttonReleaseHandler = { button in
                 if button == .ZR {
-                    print("Deactivate spotlight window")
+//                    print("Deactivate spotlight window")
                     DispatchQueue.main.async {
                         self.spotlightWindow.hide()
                         NSApp.hide(nil)
@@ -100,10 +96,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let newX = mousePos.x + pos.x * speed
         let newY = NSScreen.main!.frame.maxY - mousePos.y - pos.y * speed
         let newPos = CGPoint(x: newX, y: newY)
-        let source = CGEventSource(stateID: .hidSystemState)
         CGDisplayMoveCursorToPoint(CGMainDisplayID(), newPos)
 
-        self.spotlightWindow.update(mouseLocation: newPos)
+        let newPosUpdate = CGPoint(
+            x: newX,
+            y: mousePos.y + pos.y * speed
+        )
+        self.spotlightWindow.update(mouseLocation: newPosUpdate)
     }
 
 }

@@ -32,13 +32,7 @@ class SpotlightOverlay: NSWindow {
         alphaValue = 0.65
         backgroundColor = .clear
         
-//        NSEvent.addLocalMonitorForEvents(matching: .mouseMoved, handler: handle_mouse_move)
     }
-
-//    func handle_mouse_move(event: NSEvent) -> NSEvent {
-//        update(mouseLocation: event.locationInWindow)
-//        return event
-//    }
 
     public func show() {
         let frame = NSScreen.main!.frame
@@ -78,7 +72,11 @@ class SpotlightOverlay: NSWindow {
         path.appendRect(NSScreen.main!.frame)
 //        path.close()
 //        path.appendArc(withCenter: location, radius: circleSize, startAngle: -CGFloat.pi, endAngle: CGFloat.pi, clockwise: true)
-        path.appendOval(in: NSRect(origin: CGPoint(x: location.x - half, y: location.y - half), size: CGSize(width: circleSize, height: circleSize)))
+        let cursorLocation = CGPoint(
+            x: location.x - half,
+            y: location.y - half
+        )
+        path.appendOval(in: NSRect(origin: cursorLocation, size: CGSize(width: circleSize, height: circleSize)))
 //        path.close()
 //        path.fill()
 //        path.close()
