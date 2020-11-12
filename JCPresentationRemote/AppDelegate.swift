@@ -33,6 +33,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             controller.setPlayerLights(l1: .off, l2: .on, l3: .off, l4: .off)
             controller.enableIMU(enable: true)
             controller.setInputMode(mode: .standardFull)
+            controller.rightStickHandler = { dir, olddir in
+                print(dir)
+                print(olddir)
+            }
+            controller.rightStickPosHandler = { pos in
+                self.stickMouseHandler(pos: pos, speed: CGFloat(10.0))
+            }
             controller.buttonPressHandler = { button in
                 if button == .ZR {
                     print("Activate spotlight window")
@@ -83,6 +90,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func initStatusItem() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem?.button?.title = "JPR"
+    }
+
+    func stickMouseHandler(pos: CGPoint, speed: CGFloat) {
+        if pos.x == 0 && pos.y == 0 {
+            return
+        }
+        let mousePos = NSEvent.mouseLocation
+        let newX = mousePos.x + pos.x * speed
+        let newY = NSScreen.main!.frame.maxY - mousePos.y - pos.y * speed
+        let newPos = CGPoint(x: newX, y: newY)
+        let source = CGEventSource(stateID: .hidSystemState)
+        CGDisplayMoveCursorToPoint(CGMainDisplayID(), newPos)
     }
 
 }
