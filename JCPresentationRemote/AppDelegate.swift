@@ -110,7 +110,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let newPos = CGPoint(x: newX, y: newY)
         CGDisplayMoveCursorToPoint(CGMainDisplayID(), newPos)
 
-        let newPosUpdate = CGPoint(
+        let newPosUpdate = NSPoint(
             x: newX,
             y: mousePos.y + pos.y * speed
         )
