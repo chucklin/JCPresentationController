@@ -103,6 +103,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let source = CGEventSource(stateID: .hidSystemState)
         CGDisplayMoveCursorToPoint(CGMainDisplayID(), newPos)
 
+        self.spotlightWindow.update(mouseLocation: newPos)
     }
 
 }

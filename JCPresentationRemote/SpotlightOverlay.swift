@@ -32,13 +32,13 @@ class SpotlightOverlay: NSWindow {
         alphaValue = 0.65
         backgroundColor = .clear
         
-        NSEvent.addLocalMonitorForEvents(matching: .mouseMoved, handler: handle_mouse_move)
+//        NSEvent.addLocalMonitorForEvents(matching: .mouseMoved, handler: handle_mouse_move)
     }
 
-    func handle_mouse_move(event: NSEvent) -> NSEvent {
-        update(mouseLocation: event.locationInWindow)
-        return event
-    }
+//    func handle_mouse_move(event: NSEvent) -> NSEvent {
+//        update(mouseLocation: event.locationInWindow)
+//        return event
+//    }
 
     public func show() {
         let frame = NSScreen.main!.frame
