@@ -12,10 +12,20 @@ import JoyConSwift
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     let joyConManager = JoyConManager()
+    var statusItem: NSStatusItem?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
 
+        initJoyConManager()
+        initStatusItem()
+    }
+
+    func applicationWillTerminate(_ aNotification: Notification) {
+        // Insert code here to tear down your application
+    }
+
+    func initJoyConManager() {
         // Set connection event callbacks
         joyConManager.connectHandler = { controller in
             // Do something with the controller
@@ -24,7 +34,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             controller.setInputMode(mode: .standardFull)
             controller.buttonPressHandler = { button in
                 if button == .A {
-                    print("hi")
+                    print("press A")
+                } else if button == .B {
+                    print("press B")
                 }
             }
         }
@@ -36,10 +48,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         joyConManager.runAsync()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    func initStatusItem() {
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        statusItem?.button?.title = "JPR"
     }
-
 
 }
 
