@@ -52,6 +52,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                             keyDown: true
                         )
                         keyboardDown?.post(tap: .cghidEventTap)
+                        let keyboardUp = CGEvent(
+                            keyboardEventSource: nil,
+                            virtualKey: 0x7C,
+                            keyDown: false
+                        )
+                        keyboardUp?.post(tap: .cghidEventTap)
                     }
                 } else if button == .Y {
 //                    print("Simulate keyboard left click")
@@ -62,6 +68,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                             keyDown: true
                         )
                         keyboardDown?.post(tap: .cghidEventTap)
+                        let keyboardUp = CGEvent(
+                            keyboardEventSource: nil,
+                            virtualKey: 0x7B,
+                            keyDown: false
+                        )
+                        keyboardUp?.post(tap: .cghidEventTap)
                     }
                 }
             }

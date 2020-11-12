@@ -11,7 +11,7 @@ import Cocoa
 class SpotlightOverlay: NSWindow {
     let mask = CAShapeLayer()
     let circleSize = CGFloat(200)
-    var hiddenCursor = NSCursor.init(image: NSImage.init(size: NSSize(width: 1, height: 1)), hotSpot: NSPoint(x: NSEvent.mouseLocation.x, y: NSEvent.mouseLocation.y))
+    var hiddenCursor = NSCursor.init(image: NSImage.init(size: NSSize(width: 1, height: 1)), hotSpot: NSPoint(x: 0, y: 0))
 
     init() {
         super.init(
@@ -52,9 +52,8 @@ class SpotlightOverlay: NSWindow {
     }
 
     public func hide() {
-        if NSCursor.current == hiddenCursor {
-            NSCursor.pop()
-        }
+        NSCursor.unhide()
+        hiddenCursor.pop()
         orderOut(self)
     }
 
