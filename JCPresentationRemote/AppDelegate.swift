@@ -35,17 +35,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             controller.setInputMode(mode: .standardFull)
             controller.buttonPressHandler = { button in
                 if button == .ZR {
-                    print("press ZR button")
+                    print("Activate spotlight window")
                     DispatchQueue.main.async {
                         NSApp.activate(ignoringOtherApps: true)
                         self.spotlightWindow.show()
                     }
-                } else if button == .B {
-                    print("press B")
+                } else if button == .A {
+                    print("Simulate keyboard right click")
+                    DispatchQueue.main.async {
+                        let keyboardDown = CGEvent(
+                            keyboardEventSource: nil,
+                            virtualKey: 0x7C,
+                            keyDown: true
+                        )
+                        keyboardDown?.post(tap: .cghidEventTap)
+                    }
+                } else if button == .Y {
+                    print("Simulate keyboard left click")
+                    DispatchQueue.main.async {
+                        let keyboardDown = CGEvent(
+                            keyboardEventSource: nil,
+                            virtualKey: 0x7B,
+                            keyDown: true
+                        )
+                        keyboardDown?.post(tap: .cghidEventTap)
+                    }
                 }
             }
             controller.buttonReleaseHandler = { button in
                 if button == .ZR {
+                    print("Deactivate spotlight window")
                     DispatchQueue.main.async {
                         NSApp.deactivate()
                         self.spotlightWindow.hide()
