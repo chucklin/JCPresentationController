@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3009186BA76EE4767F43A6DD /* Pods_JCPresentationRemote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602681C9828F6FCE9109205C /* Pods_JCPresentationRemote.framework */; };
+		A239C2A5255D768B00F8586E /* ZoomInOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239C2A4255D768B00F8586E /* ZoomInOverlay.swift */; };
 		A2B34406255CD90E00862965 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B34405255CD90E00862965 /* AppDelegate.swift */; };
 		A2B34408255CD90E00862965 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B34407255CD90E00862965 /* ViewController.swift */; };
 		A2B3440A255CD90F00862965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B34409255CD90F00862965 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		2ECC10A936BCCA67B109D6DC /* Pods-JCPresentationRemote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCPresentationRemote.release.xcconfig"; path = "Target Support Files/Pods-JCPresentationRemote/Pods-JCPresentationRemote.release.xcconfig"; sourceTree = "<group>"; };
 		602681C9828F6FCE9109205C /* Pods_JCPresentationRemote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCPresentationRemote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A239C2A4255D768B00F8586E /* ZoomInOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomInOverlay.swift; sourceTree = "<group>"; };
 		A2B34402255CD90E00862965 /* JCPresentationRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCPresentationRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B34405255CD90E00862965 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2B34407255CD90E00862965 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				A2B34405255CD90E00862965 /* AppDelegate.swift */,
 				A2B34407255CD90E00862965 /* ViewController.swift */,
 				A2B34415255CF91700862965 /* SpotlightOverlay.swift */,
+				A239C2A4255D768B00F8586E /* ZoomInOverlay.swift */,
 				A2B34409255CD90F00862965 /* Assets.xcassets */,
 				A2B3440B255CD90F00862965 /* Main.storyboard */,
 				A2B3440E255CD90F00862965 /* Info.plist */,
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A239C2A5255D768B00F8586E /* ZoomInOverlay.swift in Sources */,
 				A2B34408255CD90E00862965 /* ViewController.swift in Sources */,
 				A2B34416255CF91700862965 /* SpotlightOverlay.swift in Sources */,
 				A2B34406255CD90E00862965 /* AppDelegate.swift in Sources */,

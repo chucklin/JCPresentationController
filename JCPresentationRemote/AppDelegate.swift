@@ -14,6 +14,7 @@ import InputMethodKit
 class AppDelegate: NSObject, NSApplicationDelegate {
     let joyConManager = JoyConManager()
     let spotlightWindow = SpotlightOverlay()
+    let zoomInWindow = ZoomInOverlay()
     var statusItem: NSStatusItem?
 
     @IBOutlet weak var menu: NSMenu?
@@ -51,6 +52,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     DispatchQueue.main.async {
                         NSApp.activate(ignoringOtherApps: true)
                         self.spotlightWindow.show()
+                    }
+                } else if button == .R {
+                    DispatchQueue.main.async {
+                        NSApp.activate(ignoringOtherApps: true)
+                        self.zoomInWindow.show()
                     }
                 } else if button == .A {
 //                    print("Simulate keyboard right click")
@@ -93,6 +99,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                         self.spotlightWindow.hide()
                         NSApp.hide(nil)
                     }
+                } else if button == .R {
+                    DispatchQueue.main.async {
+                        self.zoomInWindow.hide()
+                        NSApp.hide(nil)
+                    }
                 }
             }
         }
@@ -133,6 +144,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.spotlightWindow.update(mouseLocation: newPosUpdate)
         }
 
+        if self.zoomInWindow.isShowed {
+            self.zoomInWindow.update(mouseLocation: newPosUpdate)
+        }
     }
 
 }
