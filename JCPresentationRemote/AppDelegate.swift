@@ -15,15 +15,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let spotlightWindow = SpotlightOverlay()
     var statusItem: NSStatusItem?
 
+    @IBOutlet weak var menu: NSMenu?
+    @IBOutlet weak var firstMenuItem: NSMenuItem?
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
 
         initJoyConManager()
-        initStatusItem()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+
+    override func awakeFromNib() {
+        initStatusItem()
+
+        if let menu = menu {
+            statusItem?.menu = menu
+        }
     }
 
     func initJoyConManager() {
