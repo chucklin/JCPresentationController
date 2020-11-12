@@ -30,10 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     override func awakeFromNib() {
         initStatusItem()
-
-        if let menu = menu {
-            statusItem?.menu = menu
-        }
     }
 
     func initJoyConManager() {
@@ -108,6 +104,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func initStatusItem() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         statusItem?.button?.title = "JPR"
+
+        if let menu = menu {
+            statusItem?.menu = menu
+        }
+
     }
 
     func stickMouseHandler(pos: CGPoint, speed: CGFloat) {
