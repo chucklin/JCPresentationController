@@ -76,7 +76,12 @@ class ZoomInOverlay: NSWindow {
 
         scaledImageView.frame = NSRect(origin: cursorLocation, size: CGSize(width: circleSize, height: circleSize))
 
-        let scale = CGFloat(2.0) // hack for retina display, should be a calculated value
+        var scale = CGFloat(1.0)
+        if let image_width = capturedScreen?.width {
+            if let frame_width = NSScreen.main?.frame.maxX {
+                scale = CGFloat(image_width) / frame_width
+            }
+        }
         let point = CGPoint(
             x: location.x * scale - half/scale,
             y: NSScreen.main!.frame.maxY * scale - location.y * scale - half/scale
