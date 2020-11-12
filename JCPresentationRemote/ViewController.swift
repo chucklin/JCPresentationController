@@ -7,6 +7,10 @@
 //
 
 import Cocoa
+import JoyConSwift
+
+// Initialize the manager
+let manager = JoyConManager()
 
 class ViewController: NSViewController {
 

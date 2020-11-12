@@ -40,3 +40,5 @@ Framework/
 *~
 *.swp
 
+# rbenv
+.ruby-version

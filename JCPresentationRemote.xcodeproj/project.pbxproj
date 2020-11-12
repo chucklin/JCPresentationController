@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3009186BA76EE4767F43A6DD /* Pods_JCPresentationRemote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 602681C9828F6FCE9109205C /* Pods_JCPresentationRemote.framework */; };
 		A2B34406255CD90E00862965 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B34405255CD90E00862965 /* AppDelegate.swift */; };
 		A2B34408255CD90E00862965 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B34407255CD90E00862965 /* ViewController.swift */; };
 		A2B3440A255CD90F00862965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B34409255CD90F00862965 /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2ECC10A936BCCA67B109D6DC /* Pods-JCPresentationRemote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCPresentationRemote.release.xcconfig"; path = "Target Support Files/Pods-JCPresentationRemote/Pods-JCPresentationRemote.release.xcconfig"; sourceTree = "<group>"; };
+		602681C9828F6FCE9109205C /* Pods_JCPresentationRemote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JCPresentationRemote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B34402255CD90E00862965 /* JCPresentationRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCPresentationRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B34405255CD90E00862965 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2B34407255CD90E00862965 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +24,7 @@
 		A2B3440C255CD90F00862965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2B3440E255CD90F00862965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2B3440F255CD90F00862965 /* JCPresentationRemote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JCPresentationRemote.entitlements; sourceTree = "<group>"; };
+		EA9B63B5BDC09B9B064DD182 /* Pods-JCPresentationRemote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JCPresentationRemote.debug.xcconfig"; path = "Target Support Files/Pods-JCPresentationRemote/Pods-JCPresentationRemote.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +32,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3009186BA76EE4767F43A6DD /* Pods_JCPresentationRemote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F901985BEB99F5E0E584EEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				602681C9828F6FCE9109205C /* Pods_JCPresentationRemote.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A2B343F9255CD90E00862965 = {
 			isa = PBXGroup;
 			children = (
 				A2B34404255CD90E00862965 /* JCPresentationRemote */,
 				A2B34403255CD90E00862965 /* Products */,
+				C9CC7C0806A8F5F2F1AB8310 /* Pods */,
+				8F901985BEB99F5E0E584EEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +78,16 @@
 			path = JCPresentationRemote;
 			sourceTree = "<group>";
 		};
+		C9CC7C0806A8F5F2F1AB8310 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA9B63B5BDC09B9B064DD182 /* Pods-JCPresentationRemote.debug.xcconfig */,
+				2ECC10A936BCCA67B109D6DC /* Pods-JCPresentationRemote.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -70,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2B34412255CD90F00862965 /* Build configuration list for PBXNativeTarget "JCPresentationRemote" */;
 			buildPhases = (
+				5BDB4596605381F985DBE3D4 /* [CP] Check Pods Manifest.lock */,
 				A2B343FE255CD90E00862965 /* Sources */,
 				A2B343FF255CD90E00862965 /* Frameworks */,
 				A2B34400255CD90E00862965 /* Resources */,
+				293A21E33E58C9BF477A74FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,6 +154,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		293A21E33E58C9BF477A74FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JCPresentationRemote/Pods-JCPresentationRemote-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JCPresentationRemote/Pods-JCPresentationRemote-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JCPresentationRemote/Pods-JCPresentationRemote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5BDB4596605381F985DBE3D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JCPresentationRemote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A2B343FE255CD90E00862965 /* Sources */ = {
@@ -267,6 +336,7 @@
 		};
 		A2B34413255CD90F00862965 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA9B63B5BDC09B9B064DD182 /* Pods-JCPresentationRemote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JCPresentationRemote/JCPresentationRemote.entitlements;
@@ -287,6 +357,7 @@
 		};
 		A2B34414255CD90F00862965 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ECC10A936BCCA67B109D6DC /* Pods-JCPresentationRemote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JCPresentationRemote/JCPresentationRemote.entitlements;
